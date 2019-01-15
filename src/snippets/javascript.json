@@ -1,0 +1,320 @@
+{
+  "create a axios request": {
+    "prefix": "axios",
+    "body": [
+      "axios({",
+      "\tmethod:'post',",
+      "\turl: ${1:requestUrl},",
+      "\tdata: {",
+      "\t\tid:${1:paramId}",
+      "\t}",
+      "})"
+    ],
+    "description": "创建一个axios请求"
+  },
+  "axios.get request": {
+    "prefix": "axios.get",
+    "body": [
+      "axios.get(${url},${params})",
+      ".then(res => {",
+      "\tconsole.log(res)",
+      "})",
+      ".catch(err => {",
+      "\tconsole.error(err); ",
+      "})"
+    ],
+    "description": "发送一个get请求"
+  },
+  "axios.get request with params": {
+    "prefix": "axios.get_params",
+    "body": [
+      "axios.get(${url}, {",
+      "\tparams: {",
+      "\t\t${key1}: ${value1}",
+      "\t}",
+      "})",
+      ".then(res => {",
+      "\tconsole.log(res);",
+      "})"
+    ],
+    "description": "发送一个get请求"
+  },
+  "axios.post request": {
+    "prefix": "axios.post",
+    "body": [
+      "axios.post(${url},${params})",
+      ".then(res => {",
+      "\tconsole.log(res)",
+      "})",
+      ".catch(err => {",
+      "\tconsole.error(err); ",
+      "})"
+    ],
+    "description": "发送一个post请求"
+  },
+  "axios.delete request": {
+    "prefix": "axios.delete",
+    "body": [
+      "axios.delete(${url},${params})",
+      ".then(res => {",
+      "\tconsole.log(res)",
+      "})",
+      ".catch(err => {",
+      "\tconsole.error(err); ",
+      "})"
+    ],
+    "description": "发送一个delete请求"
+  },
+  "axios.head request": {
+    "prefix": "axios.head",
+    "body": [
+      "axios.head(${url},${params})",
+      ".then(res => {",
+      "\tconsole.log(res)",
+      "})",
+      ".catch(err => {",
+      "\tconsole.error(err); ",
+      "})"
+    ],
+    "description": "发送一个head请求"
+  },
+  "axios.put request": {
+    "prefix": "axios.put",
+    "body": [
+      "axios.put(${url},${params})",
+      ".then(res => {",
+      "\tconsole.log(res)",
+      "})",
+      ".catch(err => {",
+      "\tconsole.error(err); ",
+      "})"
+    ],
+    "description": "发送一个put请求"
+  },
+  "axios.all([iterable])": {
+    "prefix": "axios.all",
+    "body": [
+      "axios.all([callback1,callback2])",
+      ".then(axios.spread((res1, res2)=>{",
+      "}))"
+    ],
+    "description": "Concurrent Program 并发执行多个请求 params[callback1,callback2]"
+  },
+  "axios.spread(callback)": {
+    "prefix": "axios.spread",
+    "body": [
+      ".then(axios.spread((res1, res2)=>{",
+      "}))"
+    ],
+    "description": "Concurrent Program sucessed 多个请求执行都成功后执行"
+  },
+  "axios.create([config])": {
+    "prefix": "axios.create",
+    "body": [
+      "axios.create({",
+      "\tbaseURL: ${baseURL}",
+      "\ttimeout: ${timeout}",
+      "\theaders: ${headers}",
+      "})"
+    ],
+    "description": "create a axios instance"
+  },
+  "axios.CancelToken": {
+    "prefix": "axios.CancelToken",
+    "body": [
+      "axios.CancelToken"
+    ],
+    "description": "Cancel Token"
+  },
+  "new CancelToken": {
+    "prefix": "new CancelToken",
+    "body": [
+      "new CancelToken(()=>{})"
+    ],
+    "description": "创键一个CancelToken实例"
+  },
+  "axios.defaults": {
+    "prefix": "axios.defaults",
+    "body": [
+      "axios.defaults"
+    ],
+    "description": "axios defaults"
+  },
+  "axios.defaults.baseURL": {
+    "prefix": "axios.defaults.baseURL",
+    "body": [
+      "axios.defaults.baseURL="
+    ],
+    "description": "axios default baseUrl setting"
+  },
+  "axios.defaults.timeout": {
+    "prefix": "axios.defaults.timeout",
+    "body": [
+      "axios.defaults.timeout="
+    ],
+    "description": "axios default timeout setting"
+  },
+  "axios.defaults.headers": {
+    "prefix": "axios.defaults.headers",
+    "body": [
+      "axios.defaults.headers"
+    ],
+    "description": "axios default headers setting"
+  },
+  "axios.interceptors.request": {
+    "prefix": "axios.interceptors.request.use",
+    "body": [
+      "axios.interceptors.request.use(config => {",
+      "// Do something before request is sent",
+      "return config;",
+      "},error => {",
+      "// Do something with request error",
+      "return Promise.reject(error);",
+      "});"
+    ],
+    "description": "intercept axios request"
+  },
+  "axios.interceptors.response": {
+    "prefix": "axios.interceptors.response.use",
+    "body": [
+      "axios.interceptors.response.use(response => {",
+      "// Do something before response is sent",
+      "return response;",
+      "},error => {",
+      "// Do something with response error",
+      "return Promise.reject(error);",
+      "});"
+    ],
+    "description": "intercept axios response"
+  },
+  "proxy": {
+    "prefix": "proxy",
+    "body": [
+      "proxy:{\n}"
+    ],
+    "description": "axios config proxy"
+  },
+  "cancelToken": {
+    "prefix": "cancelToken",
+    "body": [
+      "cancelToken: new CancelToken(()=>{})"
+    ],
+    "description": "axios config cancelToken"
+  },
+  "transformRequest": {
+    "prefix": "transformRequest",
+    "body": [
+      "transformRequest[(${1:data})=>{}]"
+    ],
+    "description": "axios config transformRequest"
+  },
+  "baseURL": {
+    "prefix": "baseURL",
+    "body": [
+      "baseURL:${1:url}"
+    ],
+    "description": "axios config baseURL"
+  },
+  "paramsSerializer": {
+    "prefix": "paramsSerializer",
+    "body": [
+      "paramsSerializer:${1:param}=>{return serialize param}"
+    ],
+    "description": "axios config baseURL"
+  },
+  "xsrfCookieName": {
+    "prefix": "xsrfCookieName",
+    "body": [
+      "xsrfCookieName: 'XSRF-TOKEN'"
+    ],
+    "description": "axios config xsrfCookieName"
+  },
+  "onUploadProgress": {
+    "prefix": "onUploadProgress",
+    "body": [
+      "onUploadProgress: progressEvent=>{}"
+    ],
+    "description": "axios config onUploadProgress"
+  },
+  "onDownloadProgress": {
+    "prefix": "onDownloadProgress",
+    "body": [
+      "onDownloadProgress: progressEvent=>{}"
+    ],
+    "description": "axios config onDownloadProgress"
+  },
+  "xsrfHeaderName": {
+    "prefix": "xsrfHeaderName",
+    "body": [
+      "xsrfHeaderName: 'X-XSRF-TOKEN'"
+    ],
+    "description": "axios config xsrfHeaderName"
+  },
+  "validateStatus": {
+    "prefix": "validateStatus",
+    "body": [
+      "validateStatus: status=>{return true}"
+    ],
+    "description": "axios config validateStatus"
+  },
+  "httpsAgent": {
+    "prefix": "httpsAgent",
+    "body": [
+      "httpsAgent: new https.Agent({ keepAlive: true })"
+    ],
+    "description": "axios config httpsAgent"
+  },
+  "responseType": {
+    "prefix": "responseType",
+    "body": [
+      "responseType: 'json'"
+    ],
+    "description": "axios config responseType"
+  },
+  "withCredentials": {
+    "prefix": "withCredentials",
+    "body": [
+      "withCredentials: false"
+    ],
+    "description": "axios config withCredentials"
+  },
+  "adapter": {
+    "prefix": "adapter",
+    "body": [
+      "adapter: config=>{}"
+    ],
+    "description": "axios config adapter"
+  },
+  "auth": {
+    "prefix": "auth",
+    "body": [
+      "auth: {",
+      "username: ${1:name}",
+      "password: ${1:password}",
+      "}"
+    ],
+    "description": "axios config Authorization"
+  },
+  "maxRedirects": {
+    "prefix": "maxRedirects",
+    "body": [
+      "maxRedirects:5"
+    ],
+    "description": "axios config maxRedirects"
+  },
+  " maxContentLength": {
+    "prefix": "maxContentLength",
+    "body": [
+      "maxContentLength: ${1:length}"
+    ],
+    "description": "axios config maxContentLength"
+  },
+  " data": {
+    "prefix": "data",
+    "body": [
+      "data:{}"
+    ],
+    "description": "axios config data"
+  }
+
+}

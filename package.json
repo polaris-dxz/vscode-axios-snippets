@@ -1,0 +1,65 @@
+{
+    "name": "axios-snippets",
+    "displayName": "Axios Snippets",
+    "description": "超好用的 axios 代码补全片段，支持在.vue.js.html.ts文件中使用",
+    "version": "1.0.0",
+    "publisher": "Yggdrasill-7C9",
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "javascript",
+        "snippet",
+        "axios",
+        "vue axios"
+    ],
+    "activationEvents": [
+        "onCommand:"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [],
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./src/snippets/javascript.json"
+            },
+            {
+                "language": "vue",
+                "path": "./src/snippets/javascript.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./src/snippets/javascript.json"
+            },
+            {
+                "language": "html",
+                "path": "./src/snippets/javascript.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "bugs": {
+		"url": "https://github.com/Yggdrasill-7C9/vscode-axios-snippets/issues",
+		"email": "0x31f9f17@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Yggdrasill-7C9/vscode-axios-snippets.git"
+	},
+	"homepage": "https://github.com/Yggdrasill-7C9/vscode-axios-snippets/raw/master/README.md"
+}
